@@ -3,18 +3,15 @@ const mongoURI = 'mongodb+srv://sarifmalikk:sarifmalikk123@gofoodcluster.whf8tie
 
 
 
-const database = async ()=>{
+const database = async () => {
     try {
-        await mongoose.connect(mongoURI); 
-        console.log("connected")
-        // const fetched_data  = await mongoose.connection.db.collection('gofoodcollection2'); 
-        //     fetched_data.find({}).toArray(function(err, data){
-        //         if(err) console.log(err); 
-        //         else console.log(data); 
-        //     })
+        await mongoose.connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true });
+        console.log("connected");
+        const data  = await mongoose.connection.db.collection('gofoodcollection2').find({}).toArray(); 
+            console.log(data); 
     }
-    catch(err){
-        console.log(err); 
+    catch (err) {
+        console.log(err);
     }
 }
 
