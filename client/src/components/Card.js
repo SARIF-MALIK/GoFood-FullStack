@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function Card() {
     return (
-            <div class="card m-3" style={{ "width": "18rem", "maxWidth": "360px" }}>
+            <div className="card m-3" style={{ "width": "18rem", "maxWidth": "360px" }}>
                 <img src="https://media.istockphoto.com/id/1186759790/photo/paneer-tikka-at-skewers-in-black-bowl-at-dark-slate-background-paneer-tikka-is-an-indian.jpg?s=612x612&w=0&k=20&c=cITToqM1KEnrixXjoLhEciqP24SxdKtW3QXykq-W5OE=" className="card-img-top" alt="..." />
                 <div className="card-body">
                     <h5 className="card-title">Card title</h5>

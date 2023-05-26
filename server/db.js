@@ -8,8 +8,11 @@ const database = async () => {
         await mongoose.connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true });
         console.log("connected");
         const data  = await mongoose.connection.db.collection('gofoodcollection2').find({}).toArray(); 
-            console.log(data); 
-    }
+        const foodcategory = await mongoose.connection.db.collection('gofoodcollection').find({}).toArray(); 
+        // console.log(foodcategory);
+        global.food_items = data;  
+        global.food_categories = foodcategory; 
+    }         
     catch (err) {
         console.log(err);
     }
