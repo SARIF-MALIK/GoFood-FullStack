@@ -17,7 +17,7 @@ app.use(express.json())
 app.get('/', (req, res)=>{
     res.send('hello world');     
 })
-app.use('/api', require('./Routes/CreateUser'))
+app.use('/api', require('./Routes/CreateUser'));
 app.use('/api', require('./Routes/LoginUser')); 
 app.use('/api', require('./Routes/DisplayData')); 
 app.listen(5000, ()=>{
