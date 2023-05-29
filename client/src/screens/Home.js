@@ -76,11 +76,9 @@ export const Home = () => {
                                     .map((filteredItem) => {
                                         return (
                                             <div key={filteredItem._id} className='col-12 col-md-6 col-lg-3' >
-                                                <Card foodName={filteredItem.name} 
-                                                imgSrc={filteredItem.img} 
-                                                description={filteredItem.description} 
+                                                <Card foodItems={filteredItem} 
                                                 options={filteredItem.options[0]} 
-                                                CategoryName={filteredItem.CategoryName} />
+                                             />
                                             </div>
                                         )
                                     })
