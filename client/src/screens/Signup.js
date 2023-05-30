@@ -22,7 +22,9 @@ export default function Signup() {
         if(!json.success){
             alert("Enter valid Credentials")
         }
-        navigate('/login')
+        if(json.success){
+            navigate('/login')
+        }
     }
   return (
     <div className='container'>

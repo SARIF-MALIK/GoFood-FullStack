@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
-const mongoURI = 'mongodb+srv://sarifmalikk:sarifmalikk123@gofoodcluster.whf8tie.mongodb.net/gofoodmanual?retryWrites=true&w=majority'
+const apiKey = require("./apiKey"); 
 
-
+const mongoURI = `mongodb+srv://sarifmalikk:${apiKey}@gofoodcluster.whf8tie.mongodb.net/gofoodmanual?retryWrites=true&w=majority`
 
 const database = async () => {
     try {
