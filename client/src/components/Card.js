@@ -4,7 +4,7 @@ import { useDispatchCart, useCart } from './ContextReducer';
 export default function Card(props) {
     let options = props.options;
     let priceOptions = Object.keys(options);
-    let foodItem = props.foodItems;
+    let foodItem = props.foodItems; 
     let dispatch = useDispatchCart();
     let data = useCart();
     const priceRef = useRef();
@@ -38,11 +38,14 @@ export default function Card(props) {
     useEffect(() => {
         setSize(priceRef.current.value)
     }, [])
+
+     
     return (
         <div className="card m-3" style={{ "width": "18rem", "maxWidth": "360px" }}>
             <img src={foodItem.img} className="card-img-top" alt="..." style={{ height: "170px", objectFit: "fill" }} />
             <div className="card-body">
-                <h5 className="card-title">{foodItem.foodName}</h5>
+                <h5 className="card-title">{foodItem.name}</h5>
+                
                 <p className="card-text">{foodItem.description}</p>
                 <div className='container w-100' >
                     <select className='m-2 h-100  bg-success rounded' onChange={(e) => setQty(e.target.value)}>

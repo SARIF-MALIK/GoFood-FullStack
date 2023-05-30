@@ -30,7 +30,7 @@ function Navbar() {
               {
                 (localStorage.getItem("authToken")) ?
                   <li className="nav-item">
-                    <Link className="nav-link active" aria-current="page" to="/">My Orders</Link>
+                    <Link className="nav-link active" aria-current="page" to="/myorders">My Orders</Link>
                   </li>
                   : ""
               }

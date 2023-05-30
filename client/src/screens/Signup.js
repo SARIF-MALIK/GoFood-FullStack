@@ -1,9 +1,8 @@
 import React, { useState } from 'react'
-import {Link } from 'react-router-dom'
-
+import {Link, useNavigate } from 'react-router-dom'
 export default function Signup() {
     const [creden, setCreden] = useState({name:'', email:'', password:'', geolocation:''})
-
+    let navigate = useNavigate();
     const inputChange = (e)=>{
         setCreden({...creden, [e.target.name]:e.target.value})
     } 
@@ -23,6 +22,7 @@ export default function Signup() {
         if(!json.success){
             alert("Enter valid Credentials")
         }
+        navigate('/login')
     }
   return (
     <div className='container'>

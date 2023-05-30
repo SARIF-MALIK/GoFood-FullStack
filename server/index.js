@@ -3,6 +3,7 @@ const app = express();
 const database = require('./db')
 database(); 
 
+
 app.use((req,res,next)=>{
     res.setHeader("Access-Control-Allow-Origin", "http://localhost:3000")
     res.header(
@@ -19,7 +20,9 @@ app.get('/', (req, res)=>{
 })
 app.use('/api', require('./Routes/CreateUser'));
 app.use('/api', require('./Routes/LoginUser')); 
-app.use('/api', require('./Routes/DisplayData')); 
+app.use('/api', require('./Routes/DisplayData'));
+app.use('/api', require('./Routes/OrderData')); 
+
 app.listen(5000, ()=>{
     console.log('server started on port 5000'); 
 })

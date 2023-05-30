@@ -16,32 +16,35 @@ export default function Cart() {
   // }
 
   const handleCheckOut = async () => {
-    let userEmail = localStorage.getItem("userEmail");
-    // console.log(data,localStorage.getItem("userEmail"),new Date())
-    let response = await fetch("http://localhost:5000/api/auth/orderData", {
-      // credentials: 'include',
-      // Origin:"http://localhost:3000/login",
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({
-        order_data: data,
-        email: userEmail,
-        order_date: new Date().toDateString()
-      })
-    });
-    console.log("JSON RESPONSE:::::", response.status)
-    if (response.status === 200) {
-      dispatch({ type: "DROP" })
+    try {
+      let userEmail = localStorage.getItem("userEmail");
+      console.log(data, localStorage.getItem("userEmail"), new Date())
+      let response = await fetch("http://localhost:5000/api/orderdata", {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          order_data: data,
+          email: userEmail,
+          order_date: new Date().toDateString()
+        })
+      });
+      console.log("JSON RESPONSE:::::", response.status)
+      if (response.status === 200) {
+        dispatch({ type: "DROP" })
+      }
+    } catch (error) {
+      console.log("handleCheckOut", error);
     }
+
   }
 
   let totalPrice = data.reduce((total, food) => total + food.price, 0)
   return (
     <div>
 
-      {console.log(data)}
+      {/* {console.log(data)} */}
       <div className='container m-auto mt-5 table-responsive  table-responsive-sm table-responsive-md text-white' >
         <table className='table table-hover '>
           <thead className=' text-success fs-4 '>
