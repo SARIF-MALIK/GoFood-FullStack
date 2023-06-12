@@ -1,7 +1,7 @@
 It is a FOOD DELIVERY SITE. where a user can signup, Login and place orders. User can also see his past orders. 
-All the data is saved on the Database (MongoDb) cloud server. hash of password is saved using bcrypt. 
+All the data is saved on the Database (MongoDb) cloud server. hash of password is saved using bcrypt npm. 
 
-Tech Stack used is : MERN STACK 
+
 
 #HOME PAGE : 
 ![plot](./pics/home1.png)
