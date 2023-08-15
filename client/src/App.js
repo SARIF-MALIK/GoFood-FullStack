@@ -17,10 +17,12 @@ function App() {
     <Router>
     <div className="App">
       <Routes>
+      
         <Route exact path='/' element={<Home/>} />
         <Route exact path='/login' element={<Login/>} />
         <Route exact path='/newuser' element={<Signup/>}/>
         <Route exact path='/myorders' element={<MyOrder/>}/>
+
       </Routes>
     </div>
     </Router>
